@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--96. El CoordinatorLayout se utiliza normalemnte para decoradores de la parte superior
+-->
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context = ".MainActivity">
+
+    <!--97. 
+        Creamos el layout que contendra la toolbar
+        La propiedad fitsSystemWindows  se puede colocar para ajustar la vista
+        para el sistema de ventanas de windows-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <!--98 En el atributo height colocamos como altura un atributo de la libreria attr el cual tendra el tamano de actionBarSize-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            app:title="@string/bar_title"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/salmon"
+            app:layout_scrollFlags="scroll|enterAlways"/>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

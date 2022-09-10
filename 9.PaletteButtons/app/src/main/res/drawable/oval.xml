@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--5. Creamos otro estilo de fondo para el boton-->
+    <item>
+        <shape android:shape="oval">
+            <!--6. se puede configurar tambien el color del la forma-->
+            <solid android:color="#858585"/>
+            <!--7. Se le asigna un ancho y un alto con la propiedad size-->
+            <size android:width="120dp" android:height="120dp"/>
+        </shape>
+    </item>
+</selector>

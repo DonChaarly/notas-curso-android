@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--24.             GRID LAYOUT
+    Un grid layout es un tipo de view en donde agrupamos los elementos dentro de una especie
+    de cuadricula de filas y columnas lo que hace muy ordenado este tipo de view group
+                    CARACTERISTICAS
+    Las siguientes caracteristicas no es necesario colocarlas ya que no afectan al layout,
+    sin embargo es bueno colocarlas para ir dandonos una idea de como quedaria el gridlayout
+
+    layout_columnWeight: Peso total de columnas
+    layout_rowWeight: Peso total de filas
+    columnCount: Numero de columnas
+    rowCount: Numero de filas
+-->
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GridLayout"
+    android:layout_columnWeight="4"
+    android:layout_rowWeight="4"
+    android:layout_columnSpan="4"
+    android:layout_rowSpan="4">
+
+    <!--25      Elementos dentro del grid
+        Para especificar la posicion y cuantas filas o columnas van a ocupar cada elemento
+        Se especifican las siguientes caracteristicas
+        layout_row: Es el indice de la fila
+        layout_column Es el indice de la columna
+
+        Las siguientes caracteristicas deben ir juntas para que funcione mejor el grid
+        (Weight): Con esta propiedad android hace una suma de todos los pesos y los promedia
+        para saber cuanto ocupara un valor en la pantalla
+        layout_rowWeight: Se especifica el peso que tendra en las filas el elemento
+        layout_columnWeight: Se especifica el peso que tendra en las columnas el elemento
+        (Span): Es la cantidad de filas o columnas que ocupara el elemento
+        layout_rowSpan: Cantidad de filas que ocupa el elemento
+        layout_columnSpan: Cantidad de columnas que ocupar el elemento
+
+        Con los siguientes caracteristicas tambien hay que tener cuidado ya que si bien no se toman
+        muy en cuenta, android tambien suma todos los dp de los elementos y los promedia
+        asi que si queremos que un elemento ocupe dos filas se le tiene que colocar un dp del doble del que
+        normalemnte se le coloca como en los ejemplos
+        layout_width:
+        layout_height:
+    -->
+    <!--Ocupa la posicion 0,0 ocupando 1 fila y 1 columna-->
+    <View
+        android:background="#1111aa"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="1dp"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_rowWeight="1"
+        android:layout_rowSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="1" />
+    <!--Ocupa la posicion 0,1 ocupando 1 fila y 1 columna-->
+    <View
+        android:background="#1111aa"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="1dp"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_rowWeight="1"
+        android:layout_rowSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="1" />
+    <!--Ocupa la posicion 0,2 ocupando 1 fila y 1 columna-->
+    <View
+        android:background="#1111aa"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="1dp"
+        android:layout_row="0"
+        android:layout_column="2"
+        android:layout_rowWeight="1"
+        android:layout_rowSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="1" />
+    <!--Ocupa la posicion 0,3 ocupando 2 filas y 1 columna-->
+    <View
+        android:background="#1111aa"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_margin="1dp"
+        android:layout_row="0"
+        android:layout_column="3"
+        android:layout_rowWeight="2"
+        android:layout_rowSpan="2"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="1"/>
+    <!--Ocupa la posicion 1,0 ocupando 1 fila y 1 columna-->
+    <View
+        android:background="#1111aa"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="1dp"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_rowWeight="1"
+        android:layout_rowSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="1"/>
+    <!--Ocupa la posicion 1,1 ocupando 2 filas y 2 columnas-->
+    <View
+        android:background="#1111aa"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="1dp"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:layout_rowWeight="2"
+        android:layout_rowSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_columnSpan="2"/>
+    <!--Ocupa la posicion 2,0 ocupando 2 filas y 1 columna-->
+    <View
+        android:background="#1111aa"
+        android:layout_width="100dp"
+        android:layout_height="200dp"
+        android:layout_margin="1dp"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:layout_rowWeight="2"
+        android:layout_rowSpan="2"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="1"/>
+    <!--Ocupa la posicion 3,1 ocupando 1 fila y 3 columnas-->
+    <View
+        android:background="#1111aa"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_margin="1dp"
+        android:layout_row="3"
+        android:layout_column="1"
+        android:layout_rowWeight="1"
+        android:layout_rowSpan="1"
+        android:layout_columnWeight="3"
+        android:layout_columnSpan="3"/>
+    <!--Ocupa la posicion 2,3 ocupando 1 fila y 1 columna-->
+    <View
+        android:background="#1111aa"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="1dp"
+        android:layout_row="2"
+        android:layout_column="3"
+        android:layout_rowWeight="1"
+        android:layout_rowSpan="1"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="1"/>
+</GridLayout>

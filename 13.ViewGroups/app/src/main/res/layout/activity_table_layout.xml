@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--22.             TABLE LAYOUT
+    Este view gruop se utiliza cuando se quiere simular una tabla como una hoja de excel
+    Todos los hijos directos del TableLayout se representaran como filas las cuales ocuparan
+    toodo el ancho del padre
+    Tambien se pueden configurar las columnas colocando un numero para indicar la posicion de la columna
+    Dentro del table layout todos los elementos que son hijos no necesitan colocan layout_widht ni layout_height
+                CARACTERISITCAS
+
+    padding: Se puede colocar un padding al padre para que toodos
+             los elementos esten un poco separados del borde del padre
+    stretchColumns: Indicamos las columnas que se pueden extender y ocupar toodo el espacio disponible
+    shrinkColumns: Indicamos las columnas que se pueden contraer.
+                   Esta propiedad se tiene por defecto
+
+-->
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TableLayout"
+    android:padding="16dp"
+    android:stretchColumns="1"
+    android:shrinkColumns="2">
+
+
+    <!--23          Table row
+        Con esta etiquta se puede asignar una nueva fila dentro de la cual
+        podemos asignar mas elementos que contendra esta fila
+                    CARACTERISITCAS
+        background: Se puede configurar un backgroun para que toda la fila se muestre
+                    de un solo color
+        layout_column: Este atributo se coloca en los hijos y con ella se asigna el numero de columna
+                       Que tendra asignado el hijo
+        WeightSum: Se puede indicar cuantas columnas tendra la fila
+        layout_weight: Este atributo se coloca en los hijos y con ella se asigna el peso que ocupara dentro de la fila
+
+    -->
+    <TableRow android:background="#22dd90" android:weightSum="3">
+        <TextView
+            android:text="Articulo"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:padding="5dp"
+            android:layout_column="0" />
+
+        <TextView
+            android:text="Precio"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:padding="5dp"
+            android:layout_column="2"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="25kg de Naranja"
+            android:padding="5dp"
+            android:layout_column="0" />
+
+        <TextView
+            android:text="1.50 $"
+            android:padding="5dp"
+            android:layout_column="2"
+            android:textAlignment="textEnd"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="3 Tortillas de patatas"
+            android:padding="5dp"
+            android:layout_column="0" />
+
+        <TextView
+            android:text="4.00 $"
+            android:padding="5dp"
+            android:layout_column="2"
+            android:textAlignment="textEnd"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="4 Manzanas"
+            android:padding="5dp"
+            android:layout_column="0" />
+
+        <TextView
+            android:text="5.00 $"
+            android:padding="5dp"
+            android:layout_column="2"
+            android:textAlignment="textEnd"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="1 Vaso de horchata"
+            android:padding="5dp"
+            android:layout_column="0" />
+
+        <TextView
+            android:text="30.00 $"
+            android:padding="5dp"
+            android:layout_column="2"
+            android:textAlignment="textEnd"/>
+    </TableRow>
+    <View
+        android:layout_height="2dp"
+        android:background="#454545"/>
+    <TableRow>
+        <TextView
+            android:text="Subtotal"
+            android:padding="5dp"
+            android:layout_column="1"
+            android:textColor="#22dd90"/>
+
+        <TextView
+            android:text="40.50 $"
+            android:padding="5dp"
+            android:layout_column="2"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="Cupon de descuento"
+            android:padding="5dp"
+            android:layout_column="1"
+            android:textColor="#22dd90"/>
+
+        <TextView
+            android:text="-3.50 $"
+            android:padding="5dp"
+            android:layout_column="2"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="Costo de envio"
+            android:padding="5dp"
+            android:layout_column="1"
+            android:textColor="#22dd90"/>
+
+        <TextView
+            android:text="5.00 $"
+            android:padding="5dp"
+            android:layout_column="2"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="Total"
+            android:padding="5dp"
+            android:layout_column="1"
+            android:textColor="@color/white"
+            android:background="#22dd90"/>
+
+        <TextView
+            android:text="41.50 $"
+            android:padding="5dp"
+            android:layout_column="2"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            android:background="#22dd90"/>
+    </TableRow>
+</TableLayout>

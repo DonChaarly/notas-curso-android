@@ -1,0 +1,40 @@
+
+        Pasos que se deben seguir (No se puede avanzar a uno sin terminar el anterior)
+1. Mejoramos la funcionalidades existentes. QUE FUNCIONE
+2. Mejoramos la UX de las funcionalidades existentes
+3. Agregamos nuevas funcionalidades
+
+
+
+        NOTAS QUE SURGEN AL PROGRAMAR:
+
+ERRORES
+. Redimensionado de tablero
+. Quitar la action bar
+.
+.
+
+SOLUCIONES
+.
+. Se cambio el tema de la apliacion en el action manifest por  @style/Theme.AppCompat.NoActionBar
+. Se guardo el tamano de la pantalla en una variable y este se dividio en 8 para asignarselo al ancho y alto de las casillas(solucion a partir del comentario 35)
+
+MEJORAS DE UX
+. Un color para el punto acutal, y otro para el resto
+.
+.
+.
+.
+
+FUNCIONALIDADES
+. Inicio aleatorio
+. Poder mover el caballor (comprobando el movimiento de L)
+. Pintar casillas (y limpiarlos)
+. Control de movimientos
+. Control de opciones
+. Control de tiempo
+. Control de vidas
+. Mostar publicidad
+. Permitir pagar para ser premium
+. Habilitar acceso de premium a niveles y desabilitar pubilicdad
+. Opcion de compartir resultado

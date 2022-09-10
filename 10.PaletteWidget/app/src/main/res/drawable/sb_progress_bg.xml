@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--55. Al colocar la propiedad id/Background estamos especificando que el item se aplicara al background del seekbar-->
+    <item android:id="@android:id/background"
+        android:gravity="center_vertical|fill_horizontal">
+        <shape android:shape="rectangle"
+            android:tint="@color/purple_700">
+            <corners android:radius="8dp"/>
+            <size android:height="20dp"/>
+        </shape>
+    </item>
+    <!--56. Al colocar la propiedad id/progress estmos especificando que el item se aplciara a la barra de progreso-->
+    <item android:id="@+id/progress"
+        android:gravity="center_vertical|fill_horizontal">
+        <!--57. El scale es el que hace que el progreso no ocupe tod el ancho, solamente lo que lleva de progreso-->
+        <scale android:scaleWidth="100%">
+            <selector >
+                <!--58. indicamos que si el estado no esta habilitado le colocamos un color transparente-->
+                <item android:state_enabled="false">
+                    <shape android:shape="rectangle"
+                        android:tint="#0fff">
+                        <corners android:radius="8dp"/>
+                        <size android:height="24dp"/>
+                    </shape>
+                </item>
+                <item>
+                    <shape android:shape="rectangle"
+                        android:tint="@color/purple_200">
+                        <corners android:radius="8dp"/>
+                        <size android:height="24dp"/>
+                    </shape>
+                </item>
+            </selector>
+        </scale>
+    </item>
+</layer-list>

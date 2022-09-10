@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--11.             RELATIVE LAYOUT
+    Para especificar la posicion de los elemntos en un relative layout
+    Se especifica una referencia y una posicion
+    Se hace referencia a un elemento del layout y se especifica la posicion que
+    Se tendrea con referencia a ese otro elemento-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RelativeLayout">
+
+    <!--12.     Atributos que pueden tener los view dentro de un relativeLayout
+
+    layout_...: Con Esta propiedad hay diversas formas de desplazar el elemento, haciendo referencia a otro elemento
+                o por ejemplo centrandolo con respecto a la horizontal o vertical
+    layout_centerHorizontal: El elemento se centra con respecto a la horizontal
+    layout_centerVertical: El elemento se centra con respecto a la vertical
+    parent: la palabra parent hace referencia al padre, osea a la etiqueta en donde este contenido el elemento
+    layoutcenterInParent: El elemento se centra con respecto al padre
+    layout_(above, below toLeftof, toRightOf: El elemento se colocara encima, debajo, a la izquierda o a la derecha
+                                              del elemento que coloquemos como referencia
+    layout_alignParent(top, bottom, left, right): El elemento se coloca en la parte de arriba, abajo, a la derecha, izqueirda
+                                                  de los border del padre
+    translation(X, Y, Z): con este atributo podemos especificar que se haga un desplazamiento en cualquier eje
+    scale(X, Y, Z): Se puede tambien escalar el elemento con respecto a un eje
+    <View
+        android:id="@+id/vA"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="#131089"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"/>
+    <View
+        android:id="@+id/vB"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#8300ff"
+        android:layout_above="@+id/vA"
+        android:layout_centerHorizontal="true"/>
+     -->
+
+    <!--15.     Translation y Scale
+        Translation
+            A los elementos se lespeude aplicar el atributo translation(X, Y, Z) con el cual se puede
+            especificar un desplazamiento con respecto a un eje.
+            Sin embargo, este movimiento no afecta a los demas elementos los cuales referencien a este elemento
+            que estamos desplazando, ya que estos otros elementos hacen referencia al area asignada de nuestro elemento
+            la cual se queda donde deberia
+        Scale
+            Se puede tambien aplicar un escalado a los elementos con el atributo scale(X, Y, Z) El cual tampoco afecta a
+            los elementos los cuales esten referenciando al elemento que estamos escalando-->
+    <View
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="#00ff10"
+        android:scaleX="0.5"
+        android:scaleY="1.2"
+        android:translationX="20dp"
+        android:translationY="20dp"
+        android:translationZ="1dp" />
+
+    <!--13. Vamos a hacer una estructura mas compleja-->
+    <!--14. Este elemento lo queremos pegado a la izquierda asi
+            que eso no se modifica ya que por defecto esta pegado a ese borde-->
+    <View
+        android:id="@+id/vA"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginBottom="10dp"
+        android:background="#aa44ff"
+        android:translationY="30dp" />
+
+    <View
+        android:id="@+id/vB"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/vA"
+        android:layout_marginBottom="10dp"
+        android:background="#888888" />
+    <View
+        android:id="@+id/vC"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="#888888"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/vA"
+        android:layout_toRightOf="@+id/vB"/>
+
+    <View
+        android:id="@+id/vD"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/vB"
+        android:layout_marginBottom="10dp"
+        android:background="#888888" />
+    <View
+        android:id="@+id/vE"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="#888888"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/vB"
+        android:layout_toRightOf="@+id/vD"/>
+
+    <View
+        android:id="@+id/vF"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@+id/vD"
+        android:layout_marginBottom="10dp"
+        android:background="#99a3ff" />
+    <View
+        android:id="@+id/vG"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:background="#99a3ff"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/vD"
+        android:layout_toRightOf="@+id/vF"/>
+
+    <View
+        android:id="@+id/vH"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/vG"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@+id/vF"
+        android:background="#99a3ff" />
+
+    <View
+        android:id="@+id/vI"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/vH"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="#2299aa" />
+    <View
+        android:id="@+id/vJ"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#9113a1"
+        android:layout_below="@+id/vI"/>
+
+</RelativeLayout>

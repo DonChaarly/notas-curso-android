@@ -1,0 +1,54 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.cursoandroid.a14chezzgame"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation 'androidx.test:runner:1.4.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // 197. Se agrega la siguiente dependencia para la publicidad de google
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
+
+    //224 Libreria de stripe version 17 (integracion de pagos)
+    implementation 'com.stripe:stripe-android:17.1.2'
+    //225 La siguiente libreria es la que nos permite hacer la conexion para enviar los datos de pago
+    implementation 'com.squareup.okhttp3:okhttp:4.4.0'
+    //226 La siguiente libreria la necesitamos cuando queremos implementar un carrito de compra
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+}

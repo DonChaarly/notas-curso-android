@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--16 La herramienta selector es la que nos permite definir opciones a elegir
+        dependiendo de una eleccion -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--17 Para definir las opciones que se tienen entre los estilos, se
+            deben definir diferentes items-->
+    <!--18 Dentro de este item se tiene que colocar a parte de la propiedad que se va a modificar
+            Se coloca una propieda que verifique el estado de una caracteristica del elemento
+            En este caso sera la propiedad que comprueba que el elemento se ha seleccionado-->
+    <item android:color="@color/white" android:state_checked="false"/>
+    <item android:color="@color/black" android:state_checked="true"/>
+
+
+</selector>

@@ -1,0 +1,213 @@
+
+
+
+------------------    ESTRATEGIA  ----------------------------------------
+      Toda esta parte de diseno se define en una conversacion con el cliente
+
+    DEFINIR PROYECTO
+La definicion del proyecto se tiene que hacer en una coversacion franca con el cliente
+-No importa si el cliente es alguien ocupado
+-Asegurarse de que la comunicacion sea fructifera
+Lo que se presente debe ser lo que se pidio
+
+    AUDIENCIA
+El cliente te deve dar una idea de la audiencia a la que esta dirigida la aplicacion
+Si el cliente tiene pagina web es importante revirar si esta cuenta con google Analytics lo cual te da mucha informacion
+La informacion mas importante es:
+-Edad
+-Sexo
+-Nacionalidad
+
+
+    OBJETIVOS
+-Se debe definir el objetivo principal
+(estrategia de marketing?, en que punto seria?)
+- Usuarios, ingresos, viralizacion, BBDD emails.
+- Equilibrio entre la autoridad del cliente y
+  tu opinion profesional
+
+    ESPECIFICACIONES TECNICAS
+-Los clientes no comprenden de compatibilidades
+-Se tiene que mencionar que android y ios son diferentes, no se tendra en ambas plataformas la aplicacion
+- Se debe delimitar los dispositivos en los que va a funcionar la app
+
+
+    INVENTARIO DEL CONTENIDO
+- Antes de hacer la cita pidele  que prepare un listado
+- Antes de ir a la cita, tu revisa apps similares
+
+
+    RECURSOS
+- Que recursos tiene ya?, Que calidad tiene estos?
+- Que tengo que conseguir yo?
+
+
+    TIME LINE
+- Evita explicarle tu linea interna de trabajo al inicio
+diselo al presentar el trabajo
+- Dale 2 fechas: La version de prueba y final
+
+
+    PRESUPUESTO
+- Salario promedio/3 para algo basico
+- Salario promedio/3 por semana para algo personalizado
+- Adelanto del 50%
+
+
+
+--------------------- PLANIFICACION ----------------------------------------
+
+    CONCEPTOS INCIALES
+- Que tiene que tener la app (ventanas -> Elementos)
+- Sin determinar ningun detalle (NO SE PONE NI UN SOLO LADRILLO ANTES DE LOS PILARES)
+
+
+    LLUVIA DE IDEAS
+- Permitete ser caotico
+- Apunta todas las ideas, hasta las ridiculas (una idea lleva a otra idea)
+- BBDD de ideas
+- Te falta creatividad, inspirate en otras apps
+- INNOVADOR? SI RARO? NO
+
+
+    ARQUITECTURA
+- Decide que arquitectura usaras en el codigo (MVC, MVP, MVVVM)
+- Decide que BBDD usaras (SQL, NoSql)
+
+    LAYOUTS
+- Dibuja la composicion "final" de cada ventan en modo vertical y horizontal
+- No hagas de tu app un clon de la pagina web
+
+    USABILIDAD
+- LA UX MEJORA TODAS LAS CIFRAS
+- Que intencion tiene los usuarios?
+- Como han implementados otros esas funcionalidades basicas (Equilibrio con vistas sencillas)
+- Leer libro Don`t make me tink
+- Ubicar funcionalidades prioritarias en la parte superior
+- Seleccion de expresiones (NO ASUSTES)
+- Cuando diseñar a proposito una mala UX (Por ejemplo al dar de baja una cuenta)
+
+    MOCKUPS
+- Diseno grafico del esqueleto de cada ventana
+- Es casi lo mismo que el boceto a lapiz pero digital
+- Envio al equipo de diseno grafico
+- Se puede utilizar una herramienta como NinjaMock
+
+
+--------------------- DISEÑO  ----------------------------------------
+
+    PALETA DE COLORES
+- Minimo numero de colores
+- Crea la paleta con herramientas dedicadas a ello, sin casarte con ninguna
+- Psicologia del color
+- Modo Dark (Extra)
+- Herraimentas disponibles (hay muchas)
+    https://color.adobe.com/es/create/color-wheel
+    http://www.colorhunter.com/
+    http://colrd.com/
+    https://galactic.ink/sphere/#
+    https://paletton.com/#uid=5000u0kllllaFw0g0qFqFg0w0aF
+    https://www.toptal.com/designers/colourcode
+    https://www.colorhunt.co/palettes/purple
+    https://mybrandnewlogo.com/es/generador-de-paleta-de-colores
+
+
+    ICONO
+- Elemento visual mas importante
+- QUE LO HAGA UN PROFESIONAL
+
+    TIPOGRAFIA
+- Palo seco vs Palo Grueso
+- Catalogos
+- Se pueden utilizar bancos de fuentes como Glogle Fonts
+
+    DISEÑO DE ACTIVIDADES
+- Diseno visual, no de codigo (Con alguna herramienta grafica)
+- De lo global a lo especifico (modas)
+- Disena una buena UX
+
+    ANIMACIONES
+- Transiciones sencillas (ubicacion, tamano y color)
+- Animaciones complejas
+- No deben afectar el contenido
+
+    TEST DE UX
+- Mente abierta, no te lo tomes como algo personal
+- Puedes conseguir voluntarios?
+- Mide porcentaje de aciertos y tiempos
+
+    PLANTILLAS
+- Ofrece 2-3 disenos con variaciones en cuestiones NO principales
+- Explicale el proceso seguido hasta ahora en la toma de decisiones
+
+
+--------------------    DESARROLLO  -------------------------------------
+
+    LENGUAJE Y FRAMEWORK
+- Decide que lenguaje usaras
+- Decide que framework usaras (opcional)
+
+    BASE DE DATOS
+- Decide que BBDD usaras (SQL Vs NoSQL)
+- Si es SQL: segmentacion, procedures, triggers
+- Guarda datos de la app... Y DEL COMPORTAMIENTO, en la base de datos
+
+    DISENO VISUAL
+- Agrega toodos los recursos
+- Disena cada activity (de viewGroups a Views)
+
+    FUNCIONALIDAD
+- Agrega funcionalidad por funcinalidad a lo largo de todas las activities implicadas
+
+    EJECUCION
+-Optimizacion de tiempo
+- Optimizacion de recursos
+- Optimizacion de tamano
+
+    SEGURIDAD
+- SharedPreferences, nos guardar datos sensibles
+- Datos encriptados (opcional)
+
+
+
+----------------------  LANZAMIENTO-------------------------------------------
+
+    TEST FINAL
+- Prueba de nuevo toodo y corrige toodos los detalles
+- Prueba la app con usuarios elegidos o proporcinados por Google
+- Pruebala con el cliente, que vea que funciona
+
+    PLAY STORE
+- Publica la app con una cuenta de la empresa exclusiva para esto
+- Prueba de nuevo
+
+    ANALITYCS
+- Analiza datos de Google (Play Console) -> Campañas
+- Analiza datos de comportamiento - mejoras
+
+    GARANTIA
+- Pide observaciones en un plazo de 15-30 dias
+- Explica que no cubriras los fallos provocados por el cliente y/o su presonal
+
+    ENTRENAMIENTO PERSONAL
+- Prepara un listado de como usar app y de advertencias
+- No vayas con prisa, Asegurate de comprender las ideas
+- Prepara un dosier y/o video guias
+- Mejora tu imagen profesional
+
+
+------------------------- MANTENIMIENTO  ------------------------------------------
+
+    SOPORTE
+- Tareas programadas que mantengan un orden en los datos
+- Esta es la fase que mas dura ( tipos de cuotas)
+
+    ACTUALIZACIONES
+- La versional inicial NO es la final
+- Cambios en...
+    la audiencia?
+    El comportamiento?
+    la empresa?
+- Actualizaciones de diseno
+- Actualizacinoes de funcionalidad
+- Actualizacinoes de contenido

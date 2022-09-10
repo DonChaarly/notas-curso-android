@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!--1.          BUTTONS
+                Los buttons como los demas elemento tienes que tener layout_width y layout_height obligatoriamente
+                        Valores por defecto
+                Los botones muestran el texto en mayusculas por defecto
+                Los bototones tomaran el color del archivo de themes, el color que este establecido como primario
+                Los botonten tiene un redondeado en las esquinas por defecto
+                Tienen un padding arriba y abajo de un cierto valor
+                Cuando el boton se utiliza en la apliacion hay un cierto sonido que se acciona
+
+                        Propiedades
+                Los botontes no pueden acceder a todas sus propiedades por defecto, para hacer esto se
+                tiene que declarar como android.widget.Button
+                Esto se hace para que no sea tratado como textview sino como lo que es realmente que es un boton
+
+                text: Es lo que se va a mostrar como texto en el boton
+                      Los botones no muestran minusculas, lo que se coloque lo mostrara en mayusculas
+                backgroundTint: Se cofigura el color del fondo del boton
+                background: Se configura el estilo o color del boton, este estilo se peude crear por
+                            ejemplo en un archivo xml en la carpeta de drawable
+                textColor: Se configura el color del texto
+                gravity: Se configura en que posicion se coloca el texto en el boton
+                drawableStart: Agregar un icono al principio del boton
+                paddingLeft: Se configura un padding a la izquierda
+                paddingRight: Se configura un padding a la derecha -->
+            <android.widget.Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Iniciar Sesion"
+                android:backgroundTint="@color/purple_500"
+                android:background="@drawable/corners"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:drawableStart="@drawable/ic_baseline_login_24"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                />
+
+            <!--10.         IMAGE BUTTON
+                Este boton esta pensado par solamente mostrar una imagen, nada de texto
+                Tambien como el boton, algunos de los atributos con los que cuenta estan capados, para tratarlo como lo que es, un imageButton
+                            Valores por defecto
+                No se puede escribir texto por defecto
+                La imagen se centra por defecto
+                Se tiene un padding en todas las direcciones de cirto valor-->
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_login_24"
+                android:backgroundTint="#008300"
+                />
+
+            <!--11.          CHIP GROUP
+                Los chip group son los encargados de contener los chips que son relmente los botones
+                Los chipGroups son relmente invisibles, solamente son un area donde se contiene otros chips
+                Normalmente se le aplica el id al chipGroup y por medio de este se puede acceder a los valore
+                de los chips en la parte del codigo-->
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cgHabitciones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--12.             CHIPS
+                    Los chips son botones los cuales estanpensados para representar una eleccion entre un conjunto de
+                    varias elecciones, las cuales pueden seleccionarse al mismo tiempo
+                                Valores por defecto
+                    Los chips son de color gris por defecto
+                    Los chips titne las esquinas redondeadas por defecto
+                                Caracteristicas
+                    Debido a que los chips pertenecen a un grupo, es mejor que todos tengan el mismo estilo
+                    para ello se puede crear un estilo en recursos en la carpeta de values y themes
+
+                    style: Con esta propiedad se puede aplicar un estilo que hayamos definido anteriormenete
+                    chipIcon: Con esta propiedad se le puede agregar un icono al chip del los que tengamos disponibles
+                    -->
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Parking"
+                    style="@style/chEntry"
+                    app:chipIcon="@drawable/ic_coche"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Balcon"
+                    style="@style/chEntry"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2 baños"
+                    style="@style/chEntry"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Piscina"
+                    style="@style/chEntry"
+                    app:chipIcon="@drawable/ic_pool"/>
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!--36.         RADIO GROUPS
+                Los radioGroups son area invisibles en donde se agrupan los radioButtons
+                los cuales son realmente los botones
+                            CARACTERISTICAS
+                id: se tiene que especificar un id al radioGroup tambien para poder acceder a los demas id de los radio Buttons
+                orientation: Con esta propiedad se puede configurar la orientacion en la que se mostraran los botones
+                layout_magin: Con esta propiedad se establece un margen osea una separacion en todos los sentidos en relacion a donde este hubicado en el layout
+                checkedButton: Para establecer un botton seleccionado por defecto-->
+
+            <RadioGroup
+                android:id="@+id/rgVacaciones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--37.         RADIO BUTTONS
+                    Los radio Buttons representan una eleccion dentro de un conjunto de mas elecciones osea
+                    mas radio Buttons, de los cuales solo puede ser seleccionado uno a la vez
+                                CARACTERISTICAS
+                    id: Se tiene que configurar un id para que el radio button funcione correctamente
+                        Si no se especifica un id, se podra seleccionar mas de un radio button que es lo que no queremos
+                    text: Se configura el texto que se muestra
+                    checked: Se coloca para establecer una propiedad seleccionada por defecto
+                    buttonTint: Se configura el color del circulo de seleccion del boton
+                    onClick: En este atributo se especifica el metodo que se va a ejecutar en caso de que se presente el evento OnClick
+                    background: Se configura el estilo de fondo del boton, como en los botones normales
+                    button: Se configura la imagen del boton de selecion, si se le coloca @null, este no aparecera
+                    -->
+                <RadioButton
+                    android:id="@+id/rbMontaña"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Montaña"
+                    android:checked="true"
+                    android:buttonTint="@color/azul_Oscuro"
+                    android:onClick="onRadioButtonClicked"/>
+                <RadioButton
+                    android:id="@+id/rbPlaya"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Playa"
+                    android:onClick="onRadioButtonClicked"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rgTransporte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="20dp"
+                android:checkedButton="@id/rbCar">
+
+                <RadioButton
+                    android:id="@+id/rbCar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rb_car_bg"
+                    android:button="@null"/>
+                <RadioButton
+                    android:id="@+id/rbAirPlane"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rb_airplane_bg"
+                    android:button="@null"/>
+                <RadioButton
+                    android:id="@+id/rbTrain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rb_train_bg"
+                    android:button="@null"/>
+            </RadioGroup>
+
+            <!--48.         CHECKBOX
+                Lo check boxes representan tambien opciones, sin embargo estas no tiene que ir dentro
+                de un contenedor como los radioButton y estos pueden ser seleccionados muchos a la vez
+                            CARACTERISTICAS
+                buttonTint: Se cambia el color del selector
+                enable: Se configura si el boton puede ser seleccionado o no
+                button: Se establece la apariencia que tendra el botton
+                OnClick: En esta propiedad se especifia el metodo que se puede lanzar cuando se cumpla el evento -->
+            <CheckBox
+                android:id="@+id/cbSeguro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seguro de viaje"
+                android:enabled="false"
+                android:buttonTint="@color/azul_Oscuro"
+                android:onClick="onCheckBoxClicked"/>
+            <CheckBox
+                android:id="@+id/cbCancelable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reserva Cancelable"
+                android:checked="true"
+                android:button="@drawable/cb_custom"
+                android:onClick="onCheckBoxClicked"/>
+
+
+            <!--53.         TOGGLE BUTTON
+            Este boton sirve para representar dos estado, marcado y desmarcado, sirve por ejemplo para
+            representar encendido y apagado
+                        CARACTERISTICAS
+            text: El texto que se coloca en esta propiedad no se muestra, solo el de la propiedad textOn y TextOff
+            textOn: Es el texto que se mostrara cuando el boton este marcado
+            textOff: Es el texto que se mostrar cuando el boton este desmarcado
+            background: Para personalizar los botones se puede hacer uso del background especificando un drawable
+            -->
+            <ToggleButton
+                android:id="@+id/tbNoSi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textOn="Si"
+                android:textOff="No"
+                android:checked="true"/>
+            <ToggleButton
+                android:id="@+id/tbTravel"
+                android:layout_width="72dp"
+                android:layout_height="38dp"
+                android:text=""
+                android:textOn=""
+                android:textOff=""
+                android:checked="true"
+                android:background="@drawable/tb_travel_bg"/>
+
+
+            <!--59.         SWITCH
+            Los switch son elementos que representar un estado, son parecidos a los togglebutton
+            pero estos botones son un poco mas atractivos
+                            CARCTERISTICAS
+            text: En esta propiedad se especifica el texto que mostrar el boton
+            thumb: Esta propiedad hace referencia al circulo que represnta el boton,
+                    se puede hacer referencia a cualqueir icono para cambiar su forma
+            thumbTint: Se especifica el color del thumb
+            trackTint: Se puede especifiar un color para la barra que esta atras del thums tambine
+            -->
+            <Switch
+                android:id="@+id/swCoche"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notificar cambios por email"
+                android:thumb="@drawable/ic_car"
+                android:thumbTint="@color/azul_Oscuro"
+                android:trackTint="@color/teal_200"
+                />
+
+            <!--62 PERSONALIZACION DE SWITCH
+                Igual que con el button, se tiene que cambiar la cabecera para poder
+                quitar las limitaciones del switch y poder costumizarlo
+                        CARCTERISTICAS
+                textON y textOff: El texto se muestra de acuerdo a si este marcado o no el switch
+                showText: Nos permite visualizar el texto en el thumb
+                -->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textOn="On"
+                android:textOff="Off"
+                android:text="Notificacion de cambios"
+                app:showText="true"
+                android:checked="false"
+                android:thumb="@drawable/sw_thumb"
+                app:track="@drawable/sw_track"
+                />
+
+
+            <!--63.         Floating Action Button
+            Estos botones son un tipo muy utilizado, se colocan nomralmente en la esquina inferior derecha
+            Estos botones se sobreponen encima de todos, nada lo tapa
+                        CARACTERISTICAS
+            layout_gravity: Se especifica la posicion que tendra con respecto al layout en donde este
+            layout_margin: Se especifica un margen de espacio con respecto al layout donde este
+            clickable: Este atributo la verdad no sirve de muhco ya que funciona igual si se selecciona true o false
+            enable: ESte atributo desactiva la posibilidad de poder seleccionar el boton-->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                app:srcCompat="@drawable/ic_airplane"
+                android:layout_gravity="right"
+                android:backgroundTint="@color/azul_Oscuro"/>
+        </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--16.         CONSTRAIN LAYOUT
+    Este tipo de view group funciona especificando una referencia tanto vertical como horizontal a
+    todos sus elementos.
+    Para esto se tiene muchos atributos para hacer referencia ya sea al Parent o a otro elemento
+    Tambien se tiene otras herramientas como guias, barreras, cadenas etc.-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstrainLayout">
+
+    <!--17.         Atributos en elementos dentro de un ConstrainLayout
+
+    layout_margin(Top, Botton, Left, Right): Con esta propiedad se establece una distancia absoluta
+    con respecto al padre o layout
+    layout_constrainX_toYof: Donde X o Y pueden ser = Top, Botton, Left, Right, End y Start
+                            Con esta propiedad decimos que la parte X estara alineada con la parte Y
+                            del elemento que especifiquemos ya sea el parent o otro view
+    layout_constarinHorizontal_bias: Se especifica el porcentaje de distanciamiento del primer espacio (El derecho)
+                                     en la distancia horizontal relativa
+    layout_constarinVertical_bias: Se especifica el porcentaje de distanciamiento del primer espacio (La parte de arriba)
+                                     en la distancia vertical relativa
+
+    -->
+    <Button
+        android:id="@+id/button"
+        android:layout_width="164dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="20dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.102" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+
+    <!--18.         GUIAS
+    Las guias son lineas imaginarias con las cuales podemos referencias elementos
+    Esta guia a su vez estaran referenciadas con respecto al padre
+    Se pueden tener guias horizontales o verticales
+    Los elementos ahora podran estar referenciando a la guia
+                CARACTERISTICAS
+    orientation: Se especifica la orientacion de la guia
+    layout_constarinGuide_(percent, begin, end): la distancia que tomara ya sea con respecto
+                                                 al inicio, fin o un porcentaje del espacio
+    -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="144dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.213"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="@id/button6"
+        app:layout_constraintTop_toBottomOf="@id/button6" />
+    <!--19.         BARRERAS
+    Las barreras son lineas imaginarias con las cuales podemos referencias views
+    Estas a diferencia de las guias toman como referencia algun view
+                CARACTERISTICAS
+    barrierdirection: Se especifica hacia que lado del elemento estara la barrera
+                      (Top, Botton, Left, Right, Start, End)
+    contraint_referenced_id: Se especifican el view o conjunto de view a los cuales hara referencia la barrera
+                             En el ejemplo, debido a que se especifico que la barrera estaria al lado derecho,
+                             y se tiene dos button referenciados, se colocara al lado derecho del button mas a la derecha
+    layout_editor_absolute(X, Y): Este atributo nos permite especificar una distancia absoluta en el eje X o Y
+    -->
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="right"
+        app:constraint_referenced_ids="button7, button6"
+        app:layout_editor_absoluteX="133dp"
+        app:layout_editor_absoluteY="537dp" />
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="@+id/barrier1"
+        app:layout_editor_absoluteY="450dp" />
+
+    <!--20.         CHAINS
+        Las Chains o cadenas son conjuntos de elemntos los cuales estan unidos los unos a
+        los otros al ser referenciada su posicion con respecto al siguiente elemento
+        Se puede hacer una cadena horizontal o vertical
+                    CARACTERISTICAS
+        layout_constraintX_toYOf: Se tiene que referenciar ya sea al Start, End, Bottom o Top
+                                  del siguiente elemento para ir uniendo uno tras otro
+        layout_constrainthorizontal_chainStyle: Se especifica el estilo que tendra la cadena
+                                        spreed: reparte los espacios entre todos los elementos
+                                        spreed_inside: Los elementos de los bordes se pegan a los
+                                                       bordes del padre y los demas espacios se
+                                                       reparten entre los elementos restantes
+                                        packed: Los elementos se juntan completamente y se colocan en el centro
+        -->
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/button10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="555dp" />
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toStartOf="@+id/button11"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button9"
+        tools:layout_editor_absoluteY="555dp" />
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button10"
+        tools:layout_editor_absoluteY="555dp" />
+
+
+    <!--21.         END Y START
+        El end y start son equivalentes al right y left, sin embargo
+        se debe utilizar de preferencia el end y start ya que dependiendo
+        del idioma que el usuario tenga configurado, el inicio no siempre se
+        corresponda con la derecha y el final con la izquierda-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="70dp"
+        android:text="Saludo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

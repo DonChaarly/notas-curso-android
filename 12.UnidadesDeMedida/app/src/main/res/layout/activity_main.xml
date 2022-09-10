@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <!--1. El tamano sp respetara la configuracion de tamano de fuente del usuario-->
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Texto con size: 16sp / width: 300dp"
+        android:background="@color/purple_200"
+        android:textSize="16sp" />
+    <!--El dp es el que se recomienda utilizar para establecer una medida-->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Texto con size: 16dp / width: 300dp"
+        android:background="@color/purple_200"
+        android:textSize="16dp"/>
+
+    <!--No se recomienda utilizar px-->
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="250px"
+        android:layout_height="wrap_content"
+        android:text="Texto con width: 250px"
+        android:background="@color/purple_200"
+        android:textSize="16dp"/>
+
+    <!--No se recomienda usar ni mm, ni in, ni pt-->
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="40mm"
+        android:layout_height="wrap_content"
+        android:text="Texto con width: 40mm"
+        android:background="@color/purple_200"
+        android:textSize="16dp"/>
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="2in"
+        android:layout_height="wrap_content"
+        android:text="Texto con width: 2in"
+        android:background="@color/purple_200"
+        android:textSize="16dp"/>
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="72pt"
+        android:layout_height="wrap_content"
+        android:text="Texto con width: 72pt"
+        android:background="@color/purple_200"
+        android:textSize="16dp"/>
+
+</LinearLayout>

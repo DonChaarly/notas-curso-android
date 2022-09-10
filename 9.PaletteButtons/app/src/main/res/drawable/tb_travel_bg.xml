@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--58 Para dar una sensacion de mas fluides al cambio del selector, se le puede agregar la propiedad enterFadeDuratio
+        La cual hara que la transicion se haga un poco menos brusca-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+            android:enterFadeDuration="@android:integer/config_shortAnimTime"
+            android:exitFadeDuration="@android:integer/config_shortAnimTime">
+    <item android:drawable="@drawable/tb_beach" android:state_checked="false"/>
+
+    <item android:drawable="@drawable/tb_bosque" android:state_checked="true"/>
+</selector>

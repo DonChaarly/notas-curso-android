@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--8. Vamos a hacer un fondo con color degradado ahora-->
+    <item>
+        <shape android:shape="rectangle">
+            <!--9. Con la etiqueta de gradient configuramos
+            este degradado, colocando un color de incio, uno de final,
+            el angulo de rotacion, etc-->
+            <gradient
+                android:startColor="#f121f9"
+                android:centerColor="#a399b3"
+                android:endColor="#231090"
+                android:angle="135"
+                />
+        </shape>
+    </item>
+
+
+</selector>

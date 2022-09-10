@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--1.              LINEAR LAYOUT
+    El linear layout es el mas simple
+    si la orientacion es:
+        horizontal: Los elementos iran uno al lado del otro siempre
+        vertical: Los elementos iran uno debajo del otro siempre
+                    CARCTERISTICAS
+    xmls: las etiquetas xmls siempre las vamos a respetar, hace referencia a la libreria que pertenece
+          el layout
+    layout_width: Estas etiquetas tambien se respetan, es el ancho que ocupara el layuout
+    layout_height: Es la altura que ocupara el layout
+    context: Esta etiqueta hace referencia al activity al que estar asociado el view gruop
+    orientation: Se especifica que orientacion tomara el linear layout, vertical o horizontal
+    -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <!--2       Orientcion vertical
+         Todos los elementos no importa que, van a ir uno abajo del otro,
+         Width: se les puede asignar un ancho x y no hay problema, seguiran uno abajo del otro,
+         height: el alto si va a desplazar los elementos dependiendo del alto que se le ponga
+         Maargin: Igual se puede configurar un margin para especificar que los elementos esten un poco separados
+            -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#ff00f9"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#454545"
+                android:layout_marginTop="10dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#454545"
+                android:layout_marginTop="10dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#a3ff99"
+                android:layout_margin="20dp"/>
+        </LinearLayout>
+
+        <!--3.      Orientacion horizontal
+            La orientacion horizontal es el mismo concepto, simplemente que ahora los elementos
+            se ordenaran cada uno a la derecho del otro-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="#ff00f9"/>
+            <View
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:background="#454545"
+                android:layout_marginLeft="10dp"/>
+            <View
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:background="#454545"
+                android:layout_marginLeft="10dp"/>
+            <View
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="#a3ff99"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+
+        <!--4.      Combinacion de Linear Layout
+        Cabe señalar que esta composicion idealmente no debe de hacerse con LinearLyout
+        Ya que ya existe un view gruoup especifico para esto
+        Sin embargo puede hacerse que dentro de un Linear layout con una orientacion
+        haya otro linearLayout con una orientacion distinta -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#ff00f9"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp" />
+
+            <!--5. Se tiene un Linear Layout dentro de otro-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:background="#454545"
+                    android:layout_marginLeft="10dp"/>
+                <View
+                    android:layout_width="185dp"
+                    android:layout_height="wrap_content"
+                    android:background="#454545"
+                    android:layout_marginLeft="10dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#a3ff99"
+                android:layout_margin="10dp"/>
+        </LinearLayout>
+
+        <!--6.          RESPONSIVE DESING
+            Debido a que la aplicacion puede ser abierta en diferentes dispositivos,
+            es necesario utilizar un diseno responsable el cual dependiendo de la pantalla
+            los elementos puedan adapterase a ella.
+            En Linear layout hay dos opciones para hacer eso:
+                WeightSum: Este atributo se coloca en el padre y se especifica un valor el cual
+                           representara el valor maximo que puede ocupar los elementos dentro del este elemento
+                           A los elementos dentro se les especifica con la propiedad
+                           layout_weight: la cantidad del espacio disponible especificada en el padre
+                                           que tomara este elemento
+                layout_weight: Se puede especificar en cada elemento esta propiedad y colocar
+                               el porcentaje que tomara de la pantalla-->
+        <!--7. Con WeightSum, Se especifico un valor de 3 el cual se repartira entre los elementos dentro-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+            <!--8. El width ahora no importa tanto sin embargo tiene que colocarse, el ancho lo determinara la propiedad
+                    layout_weight: A la cual se le especifica una cantidad de valor que tomara del tamaño disponible
+                    -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#ff00f9"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#ff00f9"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#ff00f9"
+                android:layout_margin="5dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <!--9. Con layout_weight, Se especifico un porcentaje a cada elemento dentro del linear layout
+               que representara el porcentaje de pantalla que ocupara-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="horizontal">
+            <!--10. El width ahora no importa tanto sin embargo tiene que colocarse, el ancho lo determinara la propiedad
+                    layout_weight: Al cual se le especifica un porcentaje de pantalla a ocupar
+                    -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#ff00f9"
+                android:layout_margin="5dp"
+                android:layout_weight="0.70"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#ff00f9"
+                android:layout_margin="5dp"
+                android:layout_weight="0.30"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

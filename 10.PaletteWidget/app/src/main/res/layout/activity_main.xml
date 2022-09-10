@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <!--1.          IMAGE VIEW
+            Este widget se utiliza para agregar imagenees a nuestro layout
+                        CARACTERISTICAS
+            src: Con esta propiedad hacemos refereencia al archivo de la imagen
+                 que queremos que se coloca en el layout
+
+        -->
+        <ImageView
+            android:id="@+id/ivEjemplo"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:src="@drawable/wallhaven_l3w7qr">
+        </ImageView>
+        <ImageView
+            android:id="@+id/ivEjemplo2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+        </ImageView>
+
+        <!--6.          SHAPEABLE IMAGE VIEW
+            Este tipo de image view nos permite dar diferentes formas a las imagenes
+                        CARACTERISTICAS
+            shapeAppearanceOverlay: Con esta propiedad se puede aplicar un estilo a la
+                                    imagen para por ejemplo cambiar su forma
+            strokeColor: Se puede aplciar un color al contorno o stroke
+            strokeWidth: Se especifica el grosor del contonrno
+            -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/sivCircular"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/iron_man"
+            app:shapeAppearanceOverlay="@style/SpecificCornerCut"
+            app:strokeColor="#236589"
+            app:strokeWidth="5dp"/>
+
+
+        <!--12.         WEB VIEW
+            Los web View son elementos que permiten visualizar una pagina web sin necesidad
+            de abrir un exporador
+            Para especificar la url, esto se hace mejor desde codigo
+            -->
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            tools:ignore="WebViewLayout"
+            />
+
+        <!--20.         VIDEO VIEW
+            Los video view se utilizan para mostrar videos detnro de la aplicacion
+            Estos videos pueden ser cargados directamente desde la aplcacion o desde
+            un sitio web haciendo referencia a la url-->
+
+        <VideoView
+            android:id="@+id/vvLocal"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+
+            />
+        <VideoView
+            android:id="@+id/vvWeb"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:backgroundTint="@color/purple_500"/>
+
+        <!--29.             CALENDAR VIEW
+        El calendar view nos sive para mostra un calendario, gestionar fechas y tal
+        -->
+        <CalendarView
+            android:id="@+id/cvEjemplo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <TextView
+            android:id="@+id/tvFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="Fecha seleccionada: "/>
+
+
+        <!--43          PROGRESS BAR
+            El Progress bar como su nombre lo indica nos ayuda a representar el
+            progreso que hay ya sea en una cancion, en el tiempo, etc.
+            Se tiene dos tipos de barras, circulares y horizontales
+            De las circulares hay tres tamaños predefinidos chico, mediano y grande
+                        CARACTERISTICAS
+            indeterminate: Esta propiedad hace que la barra tenga un efecto de carga,
+                           se utiliza cuando el tiempo o el progreso que se lleva no se
+                           sabe, y la barra hace un barrido hasta el final y vuelve a empezar
+                           Los progress bar circulares tienen por defecto esta propiedad en true
+            indeterminateTint: Se puede cambiar el color del progreso de la barra cuando esta indeterminada
+            max: Esta es la propiedad que indica el punto al que tiene que terminar
+            progress: Esta propiedad indica el punto en el que se encuentra la barra
+            progressBackgroundTint: Esta propiedad indica el color del fondo de la barra de progreso
+            progrsessTint: Esta propiedad indica el color del progreso
+            secondaryProgrsess: un progrseo secundario es por ejemplo en youtube que se tiene el progreso
+                                de lo que se ha visto del video y otro de lo que se ha descargado
+                                Se indica un valor numerico para indicar este progreso secundario
+            secondatyProgresssTint: Esta barra tambien se puede cambiar de color
+        -->
+        <ProgressBar
+            android:id="@+id/pbMedium"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/pgSmall"
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/pbLarge"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <ProgressBar
+            android:id="@+id/pbIndeterminado"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/purple_500"/>
+        <ProgressBar
+            android:id="@+id/pbDeterminado"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="300"
+            android:progress="90"
+            android:progressBackgroundTint="#f0a8d0"
+            android:progressTint="#ff399a"
+            android:secondaryProgress="130"
+            android:secondaryProgressTint="#5991f8"
+            />
+
+        <!--54              SEEK BAR
+            Los seek bar sirven par representar el avance dentro de un rango de la barra
+            sin embargo este avance puede ser modificado por parte del usuario
+            Los iconos de los thumb tambien se pueden personalizar
+                            CARACTERISITICAS
+            max: Es el maximo del rango que se tiene en la barra
+            progress: Indicamos la posicion en que se encuentra el progreso dentro de la barra
+            Stye: el estilo diferencia a los seek bar, del primero al segundo
+            max: Es el numero maximo dentor del rango del progress
+            progress: es el valor en el que se encuentra el progreso
+            progressBackgroundTint: Se puede cambiar el color de la barra de progreso (El color se mostrar mas bajito)
+            progressTint: Se puede cambiar el color del progreso
+            thumb: Se puede cambiar el icono circular que se tiene por defecto
+            thumbTint: se puede cambiar el color del thumb
+            progressDrawable: Se puede modificar tambien el progress por un drawable
+        -->
+
+        <SeekBar
+            android:id="@+id/sbNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:progress="30"
+            android:progressDrawable="@drawable/sb_progress_bg"
+            android:thumb="@drawable/sb_thumb"
+            android:thumbTint="#8F2" />
+
+        <SeekBar
+            android:id="@+id/sbCustom"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:progress="3" />
+
+
+        <!--70              RATING BAR
+            El rating bar se utiliza para representar una valoracion por medio de esrellas,
+            la cuales son el icono por default
+            El Rating Bar es una clase que hereda del progress Bar, por ello muchos de sus atributos se pueden utilizar
+                            CARACTERISTICAS
+            numStars: Se puede modificar el numero de estrellas que se muestran
+                      Este numero puede que no se respete si es que al ancho es muy grande, ya que
+                      el rating bar colocara tantas estrellas como espacio teng disponible
+            rating: Esta propiedad es la que indica cuantas  estrellas tiene el progreso
+            stepSize: Con esta propiedad indicamos de cuanto en cuanto se puede ir aumentando
+                      la progresion del rating bar
+            progressTint: Se puede modoficar el color que tiene la progresion del ratingBar
+            progressBackgroundTint: Se puede modificar el color del fondo de RatingBar
+            isIndicator: Con esta propiedad establecemos si el RatingBar es solo indicativo o
+                         puede ser modificado por el usuario en su valor
+            style: Android ya nos da unos cuantos estilos que podemos aplicar a las estrellas
+            progressDrawable: Se puede modificar el icono que se muestra en el RatingBar
+            -->
+        <RatingBar
+            android:id="@+id/rbEjemplo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="3"
+            android:stepSize="0.5"
+            android:progressTint="@color/purple_500"
+            android:progressBackgroundTint="@color/purple_200"
+            android:isIndicator="false"
+            style="@style/Widget.AppCompat.RatingBar.Small"/>
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3/5" />
+
+
+        <!--75.             SEARCH VIEW
+            El search view nos sirve para colocar una barra de busqueda en donde
+            el usuario podra recibir ayudas dependiendo de lo que coloque
+                            CARACTERISTICAS
+            queryHing: Esta propiedad musetra un texto que indica al usuario que debe coloca
+                        Es el tipico hint de los textview
+            iconifiedByDefault: Esta propiedad indica si se permite colocar mas cosas a parte del
+                                icono que esta por defecto
+                                Si esta propiedad se coloca en true no nos dejar mostrar un hint
+            background: Se puede cambiar el background por un drawable y de esta forma
+                        cambiar un poco el estilo de la barra
+            queryBackground: Se puede cambiar el color de fondo que tendra el query
+            -->
+        <SearchView
+            android:id="@+id/svUsers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="16dp"
+            app:queryHint="Nombre"
+            app:iconifiedByDefault="false"
+            android:background="@drawable/searchview_bg"
+            app:queryBackground="@android:color/transparent"
+            />
+        <ListView
+            android:id="@+id/lvUsers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"/>
+
+        <!--86          HORIZONTAL Y VERTICAL DIVIDER
+            Estos elementos son realmente objetos view es el padre
+            Y representan un cuadrado el cual puede ocuparse para dividir elementos con algo mas marcado
+            pero realmente no sirve de muhco, solo es un rectangulo
+            -->
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:background="?android:attr/listDivider"
+            android:layout_gravity="center"/>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="4dp"
+            android:layout_height="100dp"
+            android:background="?android:attr/listDivider"
+            android:layout_gravity="center"/>
+
+        <Chronometer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TimePicker
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <DatePicker
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

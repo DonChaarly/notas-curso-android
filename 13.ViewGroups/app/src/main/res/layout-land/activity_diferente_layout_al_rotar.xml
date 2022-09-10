@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--27. Se puede crear una variacion y modificar por completo el layout y
+        dependiendo si esta rotado el celular o no se carga uno u otro layout-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DiferenteLayoutAlRotar"
+    android:orientation="horizontal">
+
+    <View
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:background="#FF3322"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:background="#1133FF"/>
+
+
+</LinearLayout>

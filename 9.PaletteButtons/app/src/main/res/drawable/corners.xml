@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--2. Para crear este fondo simplemente se crean un item al que se le asigna una forma
+    y ciertos atributos como colores, redondeo en esquinas, etc -->
+    <item>
+        <!--3. Asignamos como forma un rectangulo, dentro se especifican mas atributos-->
+        <shape android:shape="rectangle">
+            <!--4. Para modificar las esquinas se coloca una etiqueta corners-->
+            <corners android:radius="12dp"/>
+            <corners android:topRightRadius="0dp"/>
+            <corners android:bottomLeftRadius="0dp"/>
+        </shape>
+    </item>
+
+</selector>

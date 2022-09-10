@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">8.ElementosTexts</string>
+    
+    <!--24 Para declarar un array de strings, se hace lo siguiente--> 
+    <string-array name="countries_array">
+        <item>Mexico</item>
+        <item>Dinamarca</item>
+        <item>Estados Unidos</item>
+        <item>Colombia</item>
+        <item>Ecuador</item>
+        <item>Chile</item>
+        <item>Peru</item>
+        <item>Guatemala</item>
+    </string-array>
+</resources>

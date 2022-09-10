@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--126. El atributo showAsAction = 'Always' muestra la opcion
+            siempre como opcion predeterminada en la pantalla
+            Con el atributo icon se puede dar un icono a una opcion
+            android:icon="@drawable/camino"
+            app:showAsAction="always" -->
+    <item android:id="@+id/orderbay_date"
+        android:title="@string/orderbay_dateZA" />
+    <item android:id="@+id/orderbay_duration"
+        android:title="@string/orderbay_durationZA"/>
+    <item android:id="@+id/orderbay_distance"
+        android:title="@string/orderbay_distanceZA"/>
+    <item android:id="@+id/orderbay_avgspeed"
+        android:title="@string/orderbay_avgspeedZA"/>
+    <item android:id="@+id/orderbay_maxspeed"
+        android:title="@string/orderbay_maxspeedZA"/>
+
+
+
+</menu>

@@ -1,0 +1,32 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.9PaletteButtons" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <!--13. Para crear un nuevo estilo el cual se podra utilizar en varios elementos, se crea con la etiqueta style, un nuevo estilo
+            A este estilo se le tiene que definir un nombre por el cual se va a llamar con la propiedad de name-->
+    <!--14. Si el estilo se va a crear para un chip, android ya tiene una serie de estilos predefinidos par estos elementos
+            Para ello con la propiedad parent se puede elegir entre 5 posibles opciones para los chips-->
+    <style name="chEntry" parent="Widget.MaterialComponents.Chip.Entry">
+        <!--15. Para aplicar una propiedad al estilo se utiliza la etiqueta de item y con la propiedad name se selecciona la propiedad que se quiere configurar-->
+        <item name="android:textStyle">bold</item>
+        <!--19. Para aplicar la funcion que determina el color del color de letra que definimos en ch_textcolor,
+                Esta se selecciona en el atributo que queramos -->
+        <item name="android:textColor">@drawable/ch_textcolor</item>
+        <item name="chipBackgroundColor">@color/azul_Claro</item>
+        <item name="chipStrokeColor">@color/azul_Oscuro</item>
+        <item name="chipStrokeWidth">2dp</item>
+    </style>
+    
+</resources>

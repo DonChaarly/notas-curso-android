@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--6. Con parent se aplica unas cuantas carcteristicas ya establecidas-->
+    <style name="NumberPickerTheme" parent="Theme.AppCompat.Light">
+        <!--7. Con colorAccent especificamos un color al texto-->
+        <item name="colorAccent">@color/white</item>
+        <!--8 para cambiar el color que tienen las rayas que por defecto tiene el NumberPicker-->
+        <item name="colorControlNormal">@android:color/transparent</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:background">@color/gray_dark</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+</resources>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!--1. Es obligatorio colocar los atributos de layout_width y layout_heigt
+        Estos atributos indicaran que tanto del espacio disponible se ocupara para el view en cuestion
+        width par ancho y height para altura
+        -->
+
+    <!--2.   TEXT VIEW
+            Prpiedades:
+          id: Con este id se va a poder llamar desde el activity
+              Como buena practica se coloca primero las inciales del view por ejemplo si es
+              un textview se coloca primero siempre tv
+          text: en esta parte se indica el contenido del text view, lo que se va a mostrar
+          fontFamily: Es el tipo de fuente que tendra el texto
+          textStyle: En esta parte se configura que se muestre en negrita, italica o normal
+                     Se puede convinar los otros tres estilos colocando |
+          textSize: Tamaño de letra, normalmente se utiliza sp en texto para las unidades
+          typeFace: Se configura la tipografia que se quiera, sans, serif, etc.
+          textAllCaps: Para colocar to do en mayuscula
+          textApparence: Con este atributo se puede seleccionar un conjunto especifico de estilos,
+                         Por ejemplo, se tiene la opcion de titulo que hace que el texto se haga en negritas y con uns estilo especifico
+          -->
+    <TextView
+        android:id="@+id/tvEjemplo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Texto manipulable"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        android:typeface="serif"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <!--15.    EDIT TEXT
+        Este elemento permite capturar informacion por parte del usuario
+            Propiedades:
+        text: Estre atributo por lo general se deja vacio ya que es el usuario
+              el que debe llenarlo con informacion
+        hint: Se puede colocar un texto que explique que se debe colocar en el campo
+              Este texto desaparecera una vez que se hace click sobre este campo
+        textColorHint: Se puede personalizar el color del hint
+        textColor: Se puede personalizar el color del texto que se introduzca
+        ems: Con el ems configuramos la anchura que tenemos disponible para colocar informacion
+             Cuando se supera esta medida se puede seguir escribiendo pero el elemento no se hace mas grande
+        inputType: Es el tipo de informacion que se escribira
+                   Como se tiene seleccionado textPersonName, cada palabra comenzara en mayusculas
+                   otros atributos que se pueden especificar son por ejemplo
+                   textCapSentences: esta propiedad haya que en el teclado se habilite la primera letra en mayuscula
+                   textAutoCorrect: Esta propiedad hace que se habilite el autocorrector
+        digits: Con esta propiedad especificamos que caracteres se pueden escribir
+        gravity: Con esta propiedad configuramos donde se posiciona el texto
+        bacground: Se puede configurar el fondo del campo
+                   Para esto es interesante saber que se puede crear un drawable personalizado especificamente para este proposito
+                   (Esto se hizo, el archivo xml que se creo se llama fondo1)
+        paddingTop: Se puede configurar el padding superioro
+        paddingBottom: Se puede configurar el padding infererior
+        paddingStart: Se configura el padding al inicio
+        drawableStart: Esta propiedad asocia un drawable al editText
+                       Con esta propiedad especifica se colocara al inicio, sni embargo existen otros
+        drawablePadding: Se le puede configurar un padding tambien al drawable
+        textColorHighlight: Configuramos un determinado color a la seleccion que se hace desde el activitie
+
+        -->
+    <EditText
+        android:id="@+id/etEjemplo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="184dp"
+        android:background="@drawable/style_bacground_edittext"
+        android:digits="0123456789 "
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:gravity="left"
+        android:hint="Name"
+        android:inputType="textPersonName|textCapSentences|textAutoCorrect"
+        android:minHeight="48dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:text="0925213"
+        android:textColor="#FF0000"
+        android:textColorHighlight="#ff8923"
+        android:textColorHint="@color/purple_200"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="textPassword"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/etEjemplo"
+        app:layout_constraintTop_toBottomOf="@+id/etEjemplo" />
+
+    <EditText
+        android:id="@+id/editTextNumberPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="numberPassword"
+        android:hint="numberPassword"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:hint="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumberPassword"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:hint="phone"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextTextPostalAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:hint="textPostalAddress"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPhone"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:hint="textMultiLine"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPostalAddress"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress" />
+
+    <EditText
+        android:id="@+id/editTextTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="time"
+        android:hint="time"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLine"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+    <EditText
+        android:id="@+id/editTextDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:inputType="date"
+        android:hint="date"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTime"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="@+id/editTextDate"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
+
+    <EditText
+        android:id="@+id/editTextNumberSigned"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="numberSigned"
+        android:inputType="numberSigned"
+        app:layout_constraintEnd_toEndOf="@+id/editTextNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+
+    <EditText
+        android:id="@+id/editTextNumberDecimal"
+        android:layout_width="134dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="48dp"
+        android:ems="10"
+        android:hint="numberDecimal"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextNumberSigned" />
+
+    <!--25       AUTOCOMPLATE TEXT VIEW   -->
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:layout_width="120dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="32dp"
+        android:hint="AutoCompleteTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--33       MULTI AUTOCOMPLATE TEXT VIEW       -->
+    <MultiAutoCompleteTextView
+        android:id="@+id/multiAutoCompleteTextView"
+        android:layout_width="129dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="24dp"
+        android:hint="MultiAutoCompleteTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autoCompleteTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

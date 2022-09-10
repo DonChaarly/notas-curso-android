@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--1.      VIEWS OCULTOS
+        No todos los views que existen se muestran en el menu de palette de
+        componentes, sin embargo es posible crearlos en la parte xml
+        Para ello solamente se coloca < y android solo muestra la ayuda en donde
+        estan todos los views que se pueden crear.-->
+
+        <!--2. Se tiene un CRONOMETRO -->
+        <Chronometer
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <!--3. Se tiene un CALENDARIO-->
+        <DatePicker
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <!--4. Se tiene un RELOJ -->
+        <TimePicker
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <!--5.      NUMBER PICKER
+        Este elemento se utiliza para seleccionar un numero
+        Se tiene una especie de ruleta en donde se muestran los numero
+                    CARACTERISTICAS
+        theme: Para modificar el tema o estilo del number picker
+        -->
+        <NumberPicker
+            android:id="@+id/npEjemplo"
+            android:layout_width="wrap_content"
+            android:layout_height="140dp"
+            android:theme="@style/NumberPickerTheme"/>
+        <TextView
+            android:id="@+id/tvNumPicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hora: "/>
+
+
+        <!--14.         IMPLEMENTACION DE TERCEROS
+            Se hace uso del view que agregamos, copiamos y pegamos
+            la etiqueta del autor
+                        CARACTERISTICAS
+            Se tiene que ver en la documentacion que propiedades soporta
+            -->
+        <me.tankery.lib.circularseekbar.CircularSeekBar
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            app:cs_negative_enabled="true"
+            app:cs_circle_style="round"
+            app:cs_circle_stroke_width="8dp"
+            app:cs_pointer_stroke_width="24dp"
+            app:cs_pointer_halo_width="10dp"
+            app:cs_progress = "30"
+            app:cs_max = "100"/>
+
+    </LinearLayout>
+
+
+
+</ScrollView>
